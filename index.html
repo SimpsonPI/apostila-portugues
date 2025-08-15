@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CPNU 2025 - YR Aprova | Língua Portuguesa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.7;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Cabeçalho Fixo */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #ff6600;
+      color: white;
+      padding: 16px 20px;
+      text-align: center;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .header h1 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .header .logo {
+      color: #ffffff;
+      font-weight: 800;
+    }
+
+    .header p {
+      font-size: 0.85rem;
+      margin: 4px 0 0;
+      opacity: 0.95;
+    }
+
+    /* Conteúdo com margem para cabeçalho fixo */
+    .content {
+      margin-top: 130px;
+      padding-bottom: 60px;
+    }
+
+    /* Títulos */
+    h2 {
+      font-size: 1.4rem;
+      color: #1e3a8a;
+      margin: 60px 0 20px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #3b82f6;
+      page-break-before: always;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      color: #1e40af;
+      margin: 30px 0 12px 0;
+      font-weight: 600;
+    }
+
+    h4 {
+      font-size: 1.1rem;
+      color: #1e293b;
+      margin: 20px 0 10px 0;
+      font-weight: 600;
+    }
+
+    /* Texto comum */
+    p {
+      margin-bottom: 14px;
+      font-size: 0.98rem;
+    }
+
+    /* Sumário */
+    .toc {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .toc h2 {
+      margin: 0 0 16px 0;
+      border: none;
+      font-size: 1.3rem;
+      color: #1e3a8a;
+    }
+
+    .toc ul {
+      list-style: none;
+      font-size: 0.96rem;
+    }
+
+    .toc li {
+      margin-bottom: 8px;
+    }
+
+    .toc a {
+      color: #1e40af;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+      color: #0284c7;
+    }
+
+    .toc ul ul {
+      margin-left: 20px;
+      margin-top: 6px;
+    }
+
+    .toc .section {
+      font-weight: 600;
+      color: #1e3a8a;
+      margin: 10px 0 6px 0;
+    }
+
+    /* Introdução */
+    .introduction {
+      background: #dbeafe;
+      border-left: 4px solid #3b82f6;
+      padding: 20px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 30px;
+      font-size: 0.98rem;
+      color: #1e3a8a;
+    }
+
+    /* Destaque */
+    .highlight {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 14px 18px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.96rem;
+      color: #92400e;
+    }
+
+    /* Tabelas */
+    .table-container {
+      overflow-x: auto;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      background: #ffffff;
+    }
+
+    th {
+      background-color: #3b82f6;
+      color: #ffffff;
+      padding: 12px 14px;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #d1d5db;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f1f5f9;
+    }
+
+    /* Listas */
+    ul, ol {
+      margin: 12px 0 12px 24px;
+      font-size: 0.98rem;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    /* Questões */
+    .question {
+      margin: 30px 0;
+      padding: 16px;
+      background: #ffffff;
+      border: 1px solid #e0e7ff;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .question h4 {
+      color: #1e293b;
+      margin-bottom: 10px;
+    }
+
+    .options {
+      list-style: none;
+      margin: 10px 0 10px 0;
+    }
+
+    .options li {
+      margin-bottom: 8px;
+      padding-left: 24px;
+      position: relative;
+      font-size: 0.96rem;
+    }
+
+    .options li::before {
+      content: attr(data-letter ")";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: 600;
+      color: #f59e0b;
+    }
+
+    .answer {
+      margin-top: 10px;
+      font-weight: 600;
+      color: #10b981;
+      font-size: 0.96rem;
+    }
+
+    /* Infográficos */
+    .infographic {
+      background: #f1f5f9;
+      border: 1px dashed #64748b;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 8px;
+      text-align: center;
+      font-style: italic;
+      color: #475569;
+    }
+
+    /* Simulado Link */
+    .simulado-box {
+      background: #ecfdf5;
+      border: 1px solid #059669;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .simulado-box h4 {
+      color: #059669;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .simulado-box a {
+      color: #059669;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .simulado-box a:hover {
+      text-decoration: underline;
+    }
+
+    /* Rodapé */
+    .footer {
+      text-align: center;
+      margin-top: 60px;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      page-break-before: avoid;
+    }
+
+    /* Responsividade */
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+        font-size: 0.95rem;
+      }
+      h2 { font-size: 1.3rem; }
+      h3 { font-size: 1.1rem; }
+      .introduction, .highlight {
+        font-size: 0.92rem;
+      }
+      .toc {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div style="text-align: center; margin-top: 100px;">
+  <img src="capa2 - Apostila.png" alt="Capa Apostila Bloco 09" style="max-width:100%; height:auto;">
+</div>
+
+  <body>
+  <!-- Cabeçalho Fixo -->
+  <div class="header">
+    <h1>CPNU 2025 - <span class="logo">YR Aprova</span></h1>
+    <p>Língua Portuguesa – Nível Médio / Banca FGV</p>
+  </div>
+
+  <!-- Conteúdo Principal -->
+  <div class="content">
+
+    <!-- Sumário Interativo -->
+    <div class="toc">
+      <h2>📋 Sumário Interativo</h2>
+      <ul>
+        <li class="section">1. Compreensão de Textos</li>
+        <ul>
+          <li><a href="#compreensao">1.1. Compreensão vs. Interpretação</a></li>
+          <li><a href="#estrategias">1.2. Estratégias de Leitura</a></li>
+        </ul>
+
+        <li class="section">2. Modos de Organização Discursiva</li>
+        <ul>
+          <li><a href="#modos">2.1. Narrativo, Descritivo, Dissertativo, Injuntivo</a></li>
+          <li><a href="#coesao">2.2. Coerência e Coesão</a></li>
+          <li><a href="#questao1">Questão 1 – Modos Discursivos</a></li>
+        </ul>
+
+        <li class="section">3. Ortografia e Acentuação</li>
+        <ul>
+          <li><a href="#ortografia">3.1. Regras e Exceções</a></li>
+          <li><a href="#questao2">Questão 2 – Ortografia</a></li>
+        </ul>
+
+        <li class="section">4. Vocabulário e Formação de Palavras</li>
+        <ul>
+          <li><a href="#voc6bulos">4.1. Classe, Estrutura e Significação</a></li>
+          <li><a href="#derivacao">4.2. Derivação e Composição</a></li>
+          <li><a href="#questao3">Questão 3 – Derivação</a></li>
+        </ul>
+
+        <li class="section">5. Sintaxe: Oração e Período</li>
+        <ul>
+          <li><a href="#oracao">5.1. A Oração e Seus Termos</a></li>
+          <li><a href="#periodo">5.2. Estruturação do Período</a></li>
+        </ul>
+
+        <li class="section">6. Classes de Palavras</li>
+        <ul>
+          <li><a href="#classes">6.1. Aspectos Morfológicos e Sintáticos</a></li>
+          <li><a href="#questao4">Questão 4 – Classes Gramaticais</a></li>
+        </ul>
+
+        <li class="section">7. Linguagem Figurada</li>
+        <ul>
+          <li><a href="#figurada">7.1. Figuras de Linguagem</a></li>
+        </ul>
+
+        <li class="section">8. Norma Padrão</li>
+        <ul>
+          <li><a href="#concordancia">8.1. Concordância Verbal e Nominal</a></li>
+          <li><a href="#regencia">8.2. Regência Verbal e Nominal</a></li>
+          <li><a href="#crase">8.3. Emprego do Acento Grave (Crase)</a></li>
+          <li><a href="#colocacao">8.4. Colocação Pronominal</a></li>
+          <li><a href="#pontuacao">8.5. Pontuação</a></li>
+          <li><a href="#questao5">Questão 5 – Pontuação</a></li>
+        </ul>
+
+        <li class="section">✅ Simulado Final</li>
+        <ul>
+          <li><a href="#simulado">Questões 1 a 3 – Revisão Geral</a></li>
+        </ul>
+      </ul>
+    </div>
+
+    <!-- Introdução -->
+    <div class="introduction">
+      Bem-vindo(a) ao módulo <strong>Língua Portuguesa</strong> da apostila CPNU 2025! Este conteúdo foi desenvolvido para oferecer uma preparação completa, clara e eficaz para concursos da banca FGV. Aqui, você encontrará teoria objetiva, exemplos práticos, estratégias de leitura e questões comentadas que simulam o estilo da prova. Domine os conceitos essenciais de compreensão, gramática e norma padrão com qualidade e confiança.
+    </div>
+
+    <!-- Capítulo 1 -->
+    <h2 id="compreensao-textos">1. Compreensão de Textos</h2>
+    <p>A compreensão de textos é a habilidade de identificar e interpretar as ideias principais e secundárias de um texto, com base em seu conteúdo explícito e implícito. Em concursos, é a base para a maioria das questões.</p>
+
+    <h3 id="compreensao">1.1. Compreensão vs. Interpretação</h3>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Característica</th>
+            <th>Compreensão Textual</th>
+            <th>Interpretação Textual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Foco</strong></td>
+            <td>O que está explícito no texto</td>
+            <td>O que está implícito, as entrelinhas, a intenção</td>
+          </tr>
+          <tr>
+            <td><strong>Base</strong></td>
+            <td>Informações literais, dados concretos</td>
+            <td>Inferências, deduções, conhecimento de mundo</td>
+          </tr>
+          <tr>
+            <td><strong>Perguntas Típicas</strong></td>
+            <td>"De acordo com...", "O texto diz que..."</td>
+            <td>"Infere-se que...", "Conclui-se que...", "Qual a intenção?"</td>
+          </tr>
+          <tr>
+            <td><strong>Habilidade Exigida</strong></td>
+            <td>Leitura atenta, identificação de ideias</td>
+            <td>Raciocínio lógico, análise crítica, contextualização</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 id="estrategias">1.2. Estratégias de Leitura</h3>
+    <ul>
+      <li><strong>Leitura ativa:</strong> Sublinhe palavras-chave, anote ideias principais.</li>
+      <li><strong>Análise do título e subtítulos:</strong> Eles indicam o tema central.</li>
+      <li><strong>Primeiro e último parágrafo:</strong> Geralmente contêm a tese e a conclusão.</li>
+      <li><strong>Palavras-chave e conectivos:</strong> Identifique relações de causa, oposição, conclusão.</li>
+      <li><strong>Contextualização:</strong> Quem escreveu? Para quem? Com que objetivo?</li>
+    </ul>
+
+    <!-- Capítulo 2 -->
+    <h2 id="organizacao-textual">2. Modos de Organização Discursiva</h2>
+    <p>Os modos de organização discursiva são formas pelas quais o texto é estruturado para atingir um objetivo comunicativo.</p>
+
+    <h3 id="modos">2.1. Principais Modos</h3>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Modo</th>
+            <th>Finalidade</th>
+            <th>Características</th>
+            <th>Exemplos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Narrativo</strong></td>
+            <td>Contar uma história</td>
+            <td>Verbos de ação, advérbios de tempo</td>
+            <td>Contos, notícias, relatos</td>
+          </tr>
+          <tr>
+            <td><strong>Descritivo</strong></td>
+            <td>Caracterizar algo</td>
+            <td>Adjetivos, verbos de ligação</td>
+            <td>Retratos, anúncios, laudos</td>
+          </tr>
+          <tr>
+            <td><strong>Dissertativo</strong></td>
+            <td>Informar ou argumentar</td>
+            <td>Conectivos, argumentos</td>
+            <td>Artigos, ensaios, editoriais</td>
+          </tr>
+          <tr>
+            <td><strong>Injuntivo</strong></td>
+            <td>Instruir, orientar</td>
+            <td>Imperativo, infinitivo, sequência</td>
+            <td>Manuais, receitas, editais</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 id="coesao">2.2. Coerência e Coesão</h3>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Característica</th>
+            <th>Coesão</th>
+            <th>Coerência</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Natureza</strong></td>
+            <td>Formal, linguística</td>
+            <td>Profunda, lógica</td>
+          </tr>
+          <tr>
+            <td><strong>Foco</strong></td>
+            <td>Conexão entre partes</td>
+            <td>Sentido global</td>
+          </tr>
+          <tr>
+            <td><strong>Mecanismos</strong></td>
+            <td>Pronomes, conectivos, sinônimos</td>
+            <td>Lógica, progressão temática</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="question" id="questao1">
+      <h4>Questão 1 (FGV - Adaptada)</h4>
+      <p>"O candidato deve preencher o formulário online e anexar os documentos. Após o pagamento, aguarde o e-mail de confirmação."</p>
+      <p>O modo de organização discursiva predominante é:</p>
+      <ul class="options">
+        <li data-letter="a">Narrativo</li>
+        <li data-letter="b">Descritivo</li>
+        <li data-letter="c">Dissertativo-argumentativo</li>
+        <li data-letter="d">Dissertativo-expositivo</li>
+        <li data-letter="e">Injuntivo</li>
+      </ul>
+      <p class="answer">Gabarito: E</p>
+    </div>
+
+    <!-- Capítulo 3 -->
+    <h2 id="ortografia">3. Ortografia e Acentuação Gráfica</h2>
+    <p>Ortografia e acentuação são fundamentais para a clareza e correção textual. Erros aqui comprometem a credibilidade do candidato.</p>
+
+    <h3 id="ortografia">3.1. Regras e Exceções</h3>
+    <ul>
+      <li><strong>S/Z:</strong> Analisar → análise; pesquisar → pesquisa.</li>
+      <li><strong>G/J:</strong> Lágrima, jeito, pajem.</li>
+      <li><strong>X/CH:</strong> Xícara, enxoval, flecha.</li>
+      <li><strong>Acentos:</strong> Paroxítonas terminadas em ditongos, verbos "ter" e "vir", etc.</li>
+    </ul>
+
+    <div class="question" id="questao2">
+      <h4>Questão 2 (FGV)</h4>
+      <p>Assinale a alternativa com todas as palavras corretamente grafadas:</p>
+      <ul class="options">
+        <li data-letter="a">Exceção, ascenção, esceção</li>
+        <li data-letter="b">Viajem (substantivo), geito, pajem</li>
+        <li data-letter="c">Pesquisa, civilizar, analisar</li>
+        <li data-letter="d">Xícara, enchame, mecher</li>
+        <li data-letter="e">Análise, paralizar, beleza</li>
+      </ul>
+      <p class="answer">Gabarito: C</p>
+    </div>
+
+    <!-- Capítulo 4 -->
+    <h2 id="vocabulos">4. Classe, Estrutura e Formação de Vocábulos</h2>
+    <p>O estudo das palavras é essencial para a análise lexical e morfológica.</p>
+
+    <h3 id="derivacao">4.2. Derivação e Composição</h3>
+    <ul>
+      <li><strong>Derivação Prefixal:</strong> Reescrever, desligar.</li>
+      <li><strong>Derivação Sufixal:</strong> Feliz → felicidade.</li>
+      <li><strong>Composição por justaposição:</strong> Guarda-roupa.</li>
+      <li><strong>Composição por aglutinação:</strong> Planalto.</li>
+    </ul>
+
+    <div class="question" id="questao3">
+      <h4>Questão 3 (FGV)</h4>
+      <p>Qual palavra é formada por derivação sufixal?</p>
+      <ul class="options">
+        <li data-letter="a">Desleal</li>
+        <li data-letter="b">Reescrever</li>
+        <li data-letter="c">Felizmente</li>
+        <li data-letter="d">Aguardente</li>
+        <li data-letter="e">Planalto</li>
+      </ul>
+      <p class="answer">Gabarito: C</p>
+    </div>
+
+    <!-- Capítulo 5 -->
+    <h2 id="sintaxe">5. A Oração e a Estruturação do Período</h2>
+    <p>A oração é a unidade sintática central, organizada em torno de um verbo.</p>
+
+    <h3 id="oracao">5.1. Termos da Oração</h3>
+    <ul>
+      <li><strong>Sujeito:</strong> Quem realiza a ação.</li>
+      <li><strong>Predicado:</strong> O que se diz do sujeito.</li>
+      <li><strong>Objeto direto/indireto:</strong> Completam o sentido do verbo.</li>
+      <li><strong>Complemento nominal:</strong> Completa nome com preposição.</li>
+    </ul>
+
+    <h3 id="periodo">5.2. Período Composto</h3>
+    <p>Período composto por coordenação (orações independentes) e subordinação (orações dependentes).</p>
+
+    <!-- Capítulo 6 -->
+    <h2 id="classes-palavras">6. Classes de Palavras</h2>
+    <p>As dez classes gramaticais e seus aspectos morfológicos, sintáticos e estilísticos.</p>
+
+    <h3 id="classes">6.1. Principais Classes</h3>
+    <ul>
+      <li><strong>Substantivo:</strong> Nomeia seres.</li>
+      <li><strong>Verbo:</strong> Expressa ação, estado, fenômeno.</li>
+      <li><strong>Adjetivo:</strong> Caracteriza o substantivo.</li>
+      <li><strong>Pronome:</strong> Substitui ou acompanha o substantivo.</li>
+      <li><strong>Preposição:</strong> Liga termos, indica relação.</li>
+    </ul>
+
+    <div class="question" id="questao4">
+      <h4>Questão 4 (FGV)</h4>
+      <p>No trecho "O candidato demonstrou grande habilidade", a palavra "grande" é:</p>
+      <ul class="options">
+        <li data-letter="a">Substantivo</li>
+        <li data-letter="b">Verbo</li>
+        <li data-letter="c">Adjetivo</li>
+        <li data-letter="d">Advérbio</li>
+        <li data-letter="e">Pronome</li>
+      </ul>
+      <p class="answer">Gabarito: C</p>
+    </div>
+
+    <!-- Capítulo 7 -->
+    <h2 id="linguagem-figurada">7. Linguagem Figurada</h2>
+    <p>Uso de figuras de linguagem para enriquecer o texto.</p>
+    <ul>
+      <li><strong>Metáfora:</strong> "O tempo é um ladrão."</li>
+      <li><strong>Metonímia:</strong> "Ler Machado de Assis."</li>
+      <li><strong>Ironia:</strong> "Que ótimo!" (em situação ruim).</li>
+    </ul>
+
+    <!-- Capítulo 8 -->
+    <h2 id="norma-padrao">8. Norma Padrão</h2>
+
+    <h3 id="concordancia">8.1. Concordância Verbal e Nominal</h3>
+    <p>Harmonia entre sujeito e verbo, e entre nome e seus determinantes.</p>
+
+    <h3 id="regencia">8.2. Regência Verbal e Nominal</h3>
+    <p>Relação entre verbo/nome e seus complementos (com preposição).</p>
+
+    <h3 id="crase">8.3. Emprego do Acento Grave (Crase)</h3>
+    <p>Fusão de preposição "a" com artigo "a" → à.</p>
+
+    <h3 id="colocacao">8.4. Colocação Pronominal</h3>
+    <p>Posição do pronome oblíquo (próclise, ênclise, mesóclise).</p>
+
+    <h3 id="pontuacao">8.5. Pontuação</h3>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Sinal</th>
+            <th>Função</th>
+            <th>Exemplo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Vírgula</td>
+            <td>Pausa, separar elementos</td>
+            <td>Pão, leite, queijo.</td>
+          </tr>
+          <tr>
+            <td>Ponto e vírgula</td>
+            <td>Pausa longa, orações complexas</td>
+            <td>João, o médico; Maria, a advogada.</td>
+          </tr>
+          <tr>
+            <td>Dois-pontos</td>
+            <td>Introduzir citação, explicação</td>
+            <td>Disse: "Vou embora."</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="question" id="questao5">
+      <h4>Questão 5 (FGV)</h4>
+      <p>Qual sinal de pontuação introduz uma citação direta?</p>
+      <ul class="options">
+        <li data-letter="a">Vírgula</li>
+        <li data-letter="b">Ponto e vírgula</li>
+        <li data-letter="c">Dois-pontos</li>
+        <li data-letter="d">Ponto final</li>
+        <li data-letter="e">Ponto de exclamação</li>
+      </ul>
+      <p class="answer">Gabarito: C</p>
+    </div>
+
+    <!-- Simulado Final -->
+    <h2 id="simulado">✅ Simulado Final – Revisão Geral</h2>
+    <p>Questões no estilo FGV para revisão de todo o conteúdo.</p>
+
+    <div class="question">
+      <h4>1. Qual modo discursivo predomina em um manual de instruções?</h4>
+      <ul class="options">
+        <li data-letter="a">Narrativo</li>
+        <li data-letter="b">Descritivo</li>
+        <li data-letter="c">Dissertativo</li>
+        <li data-letter="d">Injuntivo</li>
+        <li data-letter="e">Argumentativo</li>
+      </ul>
+      <p class="answer">Gabarito: D</p>
+    </div>
+
+    <div class="question">
+      <h4>2. Qual palavra está corretamente acentuada?</h4>
+      <ul class="options">
+        <li data-letter="a">Paraliza</li>
+        <li data-letter="b">Paralizá</li>
+        <li data-letter="c">Paralizâ</li>
+        <li data-letter="d">Paralizaa</li>
+        <li data-letter="e">Paralizáa</li>
+      </ul>
+      <p class="answer">Gabarito: A</p>
+    </div>
+
+    <div class="question">
+      <h4>3. "O tempo é um ladrão" é um exemplo de:</h4>
+      <ul class="options">
+        <li data-letter="a">Metonímia</li>
+        <li data-letter="b">Ironia</li>
+        <li data-letter="c">Metáfora</li>
+        <li data-letter="d">Hipérbole</li>
+        <li data-letter="e">Eufemismo</li>
+      </ul>
+      <p class="answer">Gabarito: C</p>
+    </div>
+
+    <!-- Link para Simulado -->
+<div class="simulado-box" style="border: 2px solid #ff6600; padding: 20px; border-radius: 8px; background: #fff8f2; margin: 30px 0;">
+  <h4 style="margin-top:0; font-size: 20px;">🚀 Acesse o Simulado Completo Online!</h4>
+  <p>Teste seus conhecimentos com o simulado oficial da <strong>YR Aprova</strong>, com 40 questões no estilo da banca FGV.</p>
+  <p>
+    <a href="https://encurtador.com.br/k7Ou5" target="_blank" style="color:#fff; background:#ff6600; padding:10px 16px; text-decoration:none; border-radius:6px; font-weight:bold;">
+      Clique aqui para acessar o simulado →
+    </a>
+  </p>
+</div>
+
+    <!-- Rodapé -->
+    <div class="footer">
+      Apostila CPNU 2025 – YR Aprova | Língua Portuguesa – Nível Médio<br>
+      © 2025 YR Aprova. Todos os direitos reservados.<br>
+      Conteúdo atualizado para concursos da banca FGV.
+    </div>
+
+  </div>
+</body>
+</html>
